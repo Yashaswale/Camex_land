@@ -1,23 +1,22 @@
 import { useState } from 'react';
 
 const cameras = [
-  { id: 1, type: 'Employee Monitoring', status: 'Live', video: '/Videos/vid1.mp4' },
-  { id: 2, type: 'ANPR Detection', status: 'Live', video: '/Videos/vid2.mp4' },
-  { id: 3, type: 'PPE Detection', status: 'Live', video: '/Videos/vid3.mp4' },
-  { id: 4, type: 'ANPR Detection', status: 'Live', video: '/Videos/vid4.mp4' },
-  { id: 5, type: 'Employee Monitoring', status: 'Live', video: '/Videos/vid5.mp4' },
-  { id: 6, type: 'ANPR Detection', status: 'Live', image: 'https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&w=600' },
-  { id: 7, type: 'ANPR Detection', status: 'Live', image: 'https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&w=600' },
-  { id: 8, type: 'Employee Monitoring', status: 'Live', image: 'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=600' },
-  { id: 9, type: 'ANPR Detection', status: 'Live', image: 'https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&w=600' },
+  { id: 1, type: 'Employee Monitoring', status: 'Live', video: '/Videos/vid8.mp4' },
+  { id: 2, type: 'Restricted Zone', status: 'Live', video: '/Videos/vid2.mp4' },
+  { id: 3, type: 'Heatmap', status: 'Live', video: '/Videos/vid3.mp4' },
+  { id: 4, type: 'Crowd Counting', status: 'Live', video: '/Videos/vid4.mp4' },
+  { id: 5, type: 'PPE detection', status: 'Live', video: '/Videos/vid5.mp4' },
+  { id: 6, type: 'Theft Detection', status: 'Live', video: '/Videos/vid1.mp4' },
+  { id: 7, type: 'ANPR Detection', status: 'Live', video: '/Videos/vid7.mp4' },
+  { id: 8, type: 'Employee Monitoring', status: 'Live', video: '/Videos/vid8.mp4' },
 ];
 
 const categories = [
   { id: 'all', label: 'All Live Wall' },
-  { id: 'retail', label: 'Retail Store Wall' },
-  { id: 'factory', label: 'Factory Wall' },
-  { id: 'restaurant', label: 'Restaurant Wall' },
-  { id: 'road', label: 'Road Wall' },
+  { id: 'retail', label: 'Retail Store ' },
+  { id: 'factory', label: 'Factory ' },
+  { id: 'restaurant', label: 'Restaurant ' },
+  { id: 'road', label: 'Road ' },
 ];
 
 export default function LiveMonitoring() {
@@ -71,22 +70,14 @@ export default function LiveMonitoring() {
               className="relative rounded-xl overflow-hidden bg-gray-900 border border-gray-800 hover:border-gray-700 transition-all group"
             >
               <div className="aspect-video relative">
-                {camera.video ? (
-                  <video
-                    src={camera.video}
-                    className="w-full h-full object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                  />
-                ) : (
-                  <img
-                    src={camera.image}
-                    alt={camera.type}
-                    className="w-full h-full object-cover"
-                  />
-                )}
+                <video
+                  src={camera.video}
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
 
                 <div className="absolute top-3 left-3 flex items-center gap-2 px-3 py-1.5 bg-red-500/90 backdrop-blur-sm rounded-full">
