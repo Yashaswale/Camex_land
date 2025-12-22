@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const cameras = [
-  { id: 1, type: 'Employee Monitoring', status: 'Live', video: '/Videos/vid8.mp4' },
+  { id: 1, type: 'Employee Monitoring', status: 'Live', video: '/Videos/vid6.mp4' },
   { id: 2, type: 'Restricted Zone', status: 'Live', video: '/Videos/vid2.mp4' },
   { id: 3, type: 'Heatmap', status: 'Live', video: '/Videos/vid3.mp4' },
   { id: 4, type: 'Crowd Counting', status: 'Live', video: '/Videos/vid4.mp4' },
