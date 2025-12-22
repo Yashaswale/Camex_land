@@ -77,9 +77,12 @@ export default function Pricing() {
         </div>
 
         <div className="mb-6">
-          <div className="flex items-baseline gap-1">
-            <span className="text-5xl font-bold text-white">${plan.price[billingCycle]}</span>
-            <span className="text-gray-400">/{billingCycle === 'monthly' ? 'month' : 'year'}</span>
+          <div className="relative">
+            <span className="absolute -top-2 right-0 text-4xl text-gray-400">*</span>
+            <div className="flex items-baseline gap-1">
+              <span className="text-5xl font-bold text-white">${plan.price[billingCycle]}</span>
+              <span className="text-gray-400">/{billingCycle === 'monthly' ? 'month' : 'year'}</span>
+            </div>
           </div>
         </div>
 

@@ -163,9 +163,12 @@ export default function PricingTab() {
               </div>
 
               <div className="mb-6">
-                <div className="flex items-baseline gap-1">
-                  <span className="text-5xl font-bold text-white">${plan.price[billingCycle]}</span>
-                  <span className="text-gray-400">/{billingCycle === 'monthly' ? 'month' : 'year'}</span>
+                <div className="relative">
+                  <span className="absolute -top-2 right-0 text-4xl text-gray-400">*</span>
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-5xl font-bold text-white">${plan.price[billingCycle]}</span>
+                    <span className="text-gray-400">/{billingCycle === 'monthly' ? 'month' : 'year'}</span>
+                  </div>
                 </div>
               </div>
 
@@ -191,15 +194,18 @@ export default function PricingTab() {
               <h3 className="text-lg font-bold mb-2">Compare Plans</h3>
               <p className="text-sm">Choose your workspace plan according to your organisational plan</p>
             </div>
-            <div className="text-right">
+            <div className="text-right relative">
+              <span className="absolute -top-2 right-0 text-lg text-white">*</span>
               <p className="font-bold">$29 /month</p>
               <p className="text-sm">Basic</p>
             </div>
-            <div className="text-right">
+            <div className="text-right relative">
+              <span className="absolute -top-2 right-0 text-lg text-white">*</span>
               <p className="font-bold">$59 /month</p>
               <p className="text-sm">Standard</p>
             </div>
-            <div className="text-right">
+            <div className="text-right relative">
+              <span className="absolute -top-2 right-0 text-lg text-white">*</span>
               <p className="font-bold">$79 /month</p>
               <p className="text-sm">Premium</p>
             </div>
