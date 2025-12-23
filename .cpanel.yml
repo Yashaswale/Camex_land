@@ -1,8 +1,6 @@
 ---
 deployment:
   tasks:
-    - /bin/npm install
-    - /bin/npm run build
+    - export DEPLOYPATH=/home/camejodn/public_html/camex/
+    - /bin/rm -rf $DEPLOYPATH/*
     - /bin/cp -R dist/* $DEPLOYPATH/
-    - /bin/cp -R public/* $DEPLOYPATH/ 2>/dev/null || true
-
