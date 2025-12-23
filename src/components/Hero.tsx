@@ -49,7 +49,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-lg text-gray-400 mb-10 max-w-3xl leading-relaxed">
-            Camex transforms traditional CCTV into an AI-powered analytics layer — delivering real-time insights, instant alerts,
+            Camex transforms traditional CCTV into an AI-powered analytics layer, delivering real-time insights, instant alerts,
             and actionable data that helps protect your people, assets, and operations.
           </p>
 

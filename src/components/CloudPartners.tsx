@@ -34,7 +34,7 @@ export default function CloudPartners() {
           <p className="text-gray-400 text-sm uppercase tracking-wider mb-3">CLOUD PARTNER</p>
           <h2 className="text-4xl font-bold text-white mb-4">Powered by Leading Cloud Partners</h2>
           <p className="text-gray-400 text-lg">
-            Camex runs on secure, scalable, enterprise-grade cloud infrastructure — trusted worldwide for performance, reliability, and data protection.
+            Camex runs on secure, scalable, enterprise-grade cloud infrastructure - trusted worldwide for performance, reliability, and data protection.
           </p>
         </div>
 
