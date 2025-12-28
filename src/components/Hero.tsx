@@ -7,7 +7,7 @@ export default function Hero() {
     <section
       className="relative min-h-screen 
       bg-black 
-      pt-24 pb-32 overflow-hidden"
+      pt-20 sm:pt-24 pb-20 sm:pb-32 overflow-hidden"
     >
       {/* LEFT compact but intense radial glow */}
       <div
@@ -26,43 +26,43 @@ export default function Hero() {
       />
 
       {/* CCTV IMAGE */}
-      <div className="absolute top-40 left-0 opacity-90 z-0">
+      <div className="absolute top-40 left-0 opacity-90 z-0 hidden sm:block">
         <img
           src="/cctv.png"
           alt="CCTV"
-          className="w-64 h-64 object-contain"
+          className="w-48 sm:w-64 h-48 sm:h-64 object-contain"
         />
       </div>
 
       {/* MAIN CONTENT */}
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="flex flex-col items-center text-center mt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className="flex flex-col items-center text-center mt-20 sm:mt-24">
           
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/30 bg-blue-500/10 mb-8">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border border-blue-500/30 bg-blue-500/10 mb-6 sm:mb-8">
             <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-            <span className="text-sm text-gray-300">AI-powered analytics for your existing CCTV</span>
+            <span className="text-xs sm:text-sm text-gray-300">AI-powered analytics for your existing CCTV</span>
           </div>
 
-          <h1 className="text-6xl md:text-7xl font-bold text-white mb-6 max-w-5xl leading-tight">
-            <span className="text-blue-500">Grow</span> your business operations<br />
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 max-w-5xl leading-tight px-4">
+            <span className="text-blue-500">Grow</span> your business operations<br className="hidden sm:block" />{' '}
             using your <span className="text-blue-500">CCTV</span> cameras
           </h1>
 
-          <p className="text-lg text-gray-400 mb-10 max-w-3xl leading-relaxed">
+          <p className="text-sm sm:text-base lg:text-lg text-gray-400 mb-8 sm:mb-10 max-w-3xl leading-relaxed px-4">
             Camex transforms traditional CCTV into an AI-powered analytics layer, delivering real-time insights, instant alerts,
             and actionable data that helps protect your people, assets, and operations.
           </p>
 
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto px-4">
             <button
               onClick={openModal}
-              className="px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-all shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-all shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50"
             >
               Book a Demo
             </button>
             <button
               onClick={openModal}
-              className="px-8 py-3 border border-gray-600 hover:border-gray-500 text-white rounded-lg font-medium transition-all"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 border border-gray-600 hover:border-gray-500 text-white rounded-lg font-medium transition-all"
             >
               Sign Up
             </button>

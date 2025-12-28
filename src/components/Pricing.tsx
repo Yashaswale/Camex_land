@@ -59,34 +59,47 @@ export default function Pricing() {
   function PlanCard({ plan }: { plan: typeof plans[number] }) {
     return (
       <div
-        className={`relative rounded-2xl p-8 ${
+        className={`relative rounded-2xl p-6 sm:p-8 ${
           plan.popular
             ? 'bg-gradient-to-b from-blue-500/10 to-transparent border-2 border-blue-500'
             : 'bg-[#0F1F3A] border border-gray-800'
         }`}
       >
         {plan.popular && (
-          <div className="absolute -top-3 right-6 px-4 py-1 bg-blue-500 text-white text-xs font-bold rounded-full uppercase">
+          <div className="absolute -top-3 right-4 sm:right-6 px-3 sm:px-4 py-1 bg-blue-500 text-white text-xs font-bold rounded-full uppercase">
             Most Popular
           </div>
         )}
 
-        <div className="mb-6">
-          <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-          <p className="text-gray-400 text-sm">{plan.description}</p>
+        <div className="mb-4 sm:mb-6">
+          <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">{plan.name}</h3>
+          <p className="text-gray-400 text-xs sm:text-sm">{plan.description}</p>
         </div>
 
-        <div className="mb-6">
+        <div className="mb-4 sm:mb-6">
           <div className="relative">
-            <span className="absolute -top-2 right-0 text-4xl text-gray-400">*</span>
-            <div className="flex items-baseline gap-1">
-              <span className="text-5xl font-bold text-white">${plan.price[billingCycle]}</span>
-              <span className="text-gray-400">/{billingCycle === 'monthly' ? 'month' : 'year'}</span>
+            <span className="absolute -top-2 right-0 text-3xl sm:text-4xl text-gray-400">*</span>
+            <div className="flex flex-col gap-1">
+              {billingCycle === 'yearly' ? (
+                <>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-2xl sm:text-3xl font-bold text-gray-500 line-through">${plan.price.yearly}</span>
+                    <span className="text-4xl sm:text-5xl font-bold text-white">${Math.round(plan.price.yearly * 0.9)}</span>
+                    <span className="text-gray-400 text-sm sm:text-base">/year</span>
+                  </div>
+                  <span className="text-green-400 text-xs sm:text-sm font-medium">Save 10%</span>
+                </>
+              ) : (
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl sm:text-5xl font-bold text-white">${plan.price.monthly}</span>
+                  <span className="text-gray-400 text-sm sm:text-base">/month</span>
+                </div>
+              )}
             </div>
           </div>
         </div>
 
-        <Link to="/pricing" className={ctaButtonClass + ' block text-center'}>
+        <Link to="/pricing" className={ctaButtonClass + ' block text-center text-sm sm:text-base'}>
           View Detail
         </Link>
 
@@ -103,7 +116,7 @@ export default function Pricing() {
   }
 
   return (
-    <section id="pricing" className="relative bg-black py-20 overflow-hidden">
+    <section id="pricing" className="relative bg-black pt-6 pb-12 sm:py-20 overflow-hidden">
       {/* Radial glow accents to match hero background */}
       <div
         className="pointer-events-none absolute left-[-25%] top-1/2 -translate-y-1/2 
@@ -118,18 +131,22 @@ export default function Pricing() {
         blur-[150px] opacity-90 z-0"
       />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="mb-12">
-          <p className="text-gray-400 text-sm uppercase tracking-wider mb-3">PRICING</p>
-          <h2 className="text-4xl font-bold text-white mb-4">Simple, scalable pricing for every stage</h2>
-          <p className="text-gray-400 text-lg">Choose a plan that fits your CCTV scale and analytics needs.</p>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className="mb-8 sm:mb-12">
+          <p className="text-gray-400 text-xs sm:text-sm uppercase tracking-wider mb-2 sm:mb-3">PRICING</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4">Simple, scalable pricing for every stage</h2>
+          <p className="text-gray-400 text-base sm:text-lg">Choose a plan that fits your CCTV scale and analytics needs.</p>
         </div>
 
-        <div className="flex items-center gap-3 mb-12">
-          <button onClick={() => setBillingCycle('monthly')} className={toggleButtonClass(billingCycle === 'monthly')}>
+        <div className="flex items-center gap-3 mb-8 sm:mb-12">
+          <button onClick={() => setBillingCycle('monthly')} className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg font-medium transition-all text-sm sm:text-base ${
+            billingCycle === 'monthly' ? 'bg-blue-500 text-white' : 'bg-transparent border border-gray-700 text-gray-400'
+          }`}>
             Monthly
           </button>
-          <button onClick={() => setBillingCycle('yearly')} className={toggleButtonClass(billingCycle === 'yearly')}>
+          <button onClick={() => setBillingCycle('yearly')} className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg font-medium transition-all text-sm sm:text-base ${
+            billingCycle === 'yearly' ? 'bg-blue-500 text-white' : 'bg-transparent border border-gray-700 text-gray-400'
+          }`}>
             Yearly
           </button>
         </div>

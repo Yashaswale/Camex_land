@@ -289,9 +289,9 @@ export default function CaseStudyDetail() {
     return (
       <div className="min-h-screen bg-[#0A1628]">
         <Navigation />
-        <div className="pt-32 pb-20 text-center">
-          <h1 className="text-4xl font-bold text-white mb-4">Case Study Not Found</h1>
-          <Link to="/" className="text-blue-500 hover:text-blue-400">
+        <div className="pt-20 sm:pt-32 pb-12 sm:pb-20 text-center px-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">Case Study Not Found</h1>
+          <Link to="/" className="text-blue-500 hover:text-blue-400 text-sm sm:text-base">
             Return to Home
           </Link>
         </div>
@@ -308,26 +308,26 @@ export default function CaseStudyDetail() {
       <div className="pointer-events-none absolute right-[-22%] top-1/2 -translate-y-1/2 w-[750px] h-[750px] rounded-full bg-[radial-gradient(circle,_rgba(6,105,255,0.80)_0%,_rgba(6,105,255,0.22)_40%,_rgba(6,105,255,0)_80%)] blur-[160px] opacity-95 z-0" />
       <Navigation />
 
-      <section className="pt-32 pb-20 bg-black">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="pt-20 sm:pt-24 md:pt-32 pb-12 sm:pb-20 bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <button
             onClick={() => navigate(-1)}
-            className="mb-8 p-3 bg-white/10 hover:bg-white/20 rounded-lg transition-all inline-flex items-center gap-2"
+            className="mb-6 sm:mb-8 p-2 sm:p-3 bg-white/10 hover:bg-white/20 rounded-lg transition-all inline-flex items-center gap-2"
           >
-            <ChevronLeft className="w-5 h-5 text-white" />
-            <span className="text-white text-sm font-medium">Back</span>
+            <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+            <span className="text-white text-xs sm:text-sm font-medium">Back</span>
           </button>
-          <div className="flex items-center gap-2 text-gray-400 text-sm mb-8">
+          <div className="flex items-center gap-2 text-gray-400 text-xs sm:text-sm mb-6 sm:mb-8">
             <Link to="/" className="hover:text-white">Home</Link>
-            <ChevronRight className="w-4 h-4" />
+            <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" />
             <span>Case Study</span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-12 leading-tight max-w-4xl">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 sm:mb-12 leading-tight max-w-4xl">
             {study.title}
           </h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16">
             {study.images.map((image, index) => (
               <div key={index} className="aspect-video relative overflow-hidden rounded-xl">
                 <img
@@ -339,48 +339,48 @@ export default function CaseStudyDetail() {
             ))}
           </div>
 
-          <div className="prose prose-invert max-w-none mb-16">
-            <p className="text-gray-300 text-lg leading-relaxed">
+          <div className="prose prose-invert max-w-none mb-12 sm:mb-16">
+            <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
               {study.intro}
             </p>
           </div>
 
-          <div className="border-t border-gray-800 pt-16 mb-16">
-            <h2 className="text-3xl font-bold text-white mb-6">{study.whyNeeded.title}</h2>
-            <p className="text-gray-400 mb-6">{study.whyNeeded.intro}</p>
-            <ul className="space-y-3 mb-8">
+          <div className="border-t border-gray-800 pt-8 sm:pt-12 md:pt-16 mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">{study.whyNeeded.title}</h2>
+            <p className="text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">{study.whyNeeded.intro}</p>
+            <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
               {study.whyNeeded.points.map((point, index) => (
-                <li key={index} className="flex gap-3 text-gray-300">
-                  <span className="text-blue-500 font-bold">•</span>
+                <li key={index} className="flex gap-2 sm:gap-3 text-gray-300 text-sm sm:text-base">
+                  <span className="text-blue-500 font-bold flex-shrink-0">•</span>
                   <span>{point}</span>
                 </li>
               ))}
             </ul>
-            <p className="text-gray-400">{study.whyNeeded.conclusion}</p>
+            <p className="text-gray-400 text-sm sm:text-base">{study.whyNeeded.conclusion}</p>
           </div>
 
-          <div className="border-t border-gray-800 pt-16 mb-16">
-            <h2 className="text-3xl font-bold text-white mb-6">{study.whatIs.title}</h2>
-            <p className="text-gray-400 mb-6">{study.whatIs.intro}</p>
-            <ul className="space-y-3 mb-8">
+          <div className="border-t border-gray-800 pt-8 sm:pt-12 md:pt-16 mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">{study.whatIs.title}</h2>
+            <p className="text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">{study.whatIs.intro}</p>
+            <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
               {study.whatIs.points.map((point, index) => (
-                <li key={index} className="flex gap-3 text-gray-300">
-                  <span className="text-blue-500 font-bold">•</span>
+                <li key={index} className="flex gap-2 sm:gap-3 text-gray-300 text-sm sm:text-base">
+                  <span className="text-blue-500 font-bold flex-shrink-0">•</span>
                   <span>{point}</span>
                 </li>
               ))}
             </ul>
-            <p className="text-gray-400">{study.whatIs.conclusion}</p>
+            <p className="text-gray-400 text-sm sm:text-base">{study.whatIs.conclusion}</p>
           </div>
 
-          <div className="border-t border-gray-800 pt-16 mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="border-t border-gray-800 pt-8 sm:pt-12 md:pt-16 mb-12 sm:mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
               {study.features.map((feature, index) => (
                 <div key={index}>
-                  <h3 className="text-xl font-bold text-white mb-4">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">
                     {feature.number}. {feature.title}
                   </h3>
-                  <p className="text-gray-300 mb-4">{feature.intro}</p>
+                  <p className="text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">{feature.intro}</p>
                   {feature.points && (
                     <ul className="space-y-2">
                       {feature.points.map((point, i) => (
@@ -401,20 +401,50 @@ export default function CaseStudyDetail() {
         </div>
       </section>
 
-      <section className="bg-black py-20 ">
-        <div className="max-w-7xl mx-auto px-6">
-          <p className="text-gray-400 text-sm uppercase tracking-wider mb-3">CASE STUDY</p>
-          <h2 className="text-4xl font-bold text-white mb-4">Camex in action</h2>
-          <p className="text-gray-400 text-lg mb-12">
+      <section className="bg-black py-12 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <p className="text-gray-400 text-xs sm:text-sm uppercase tracking-wider mb-2 sm:mb-3">CASE STUDY</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4">Camex in action</h2>
+          <p className="text-gray-400 text-base sm:text-lg mb-8 sm:mb-12">
             Real environments. Real impact. See how AI turned CCTV into actionable intelligence.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
               {
                 title: 'Intelligent Crowd Management at Scale',
                 slug: 'intelligent-crowd-management',
                 image: 'https://images.pexels.com/photos/2422294/pexels-photo-2422294.jpeg?auto=compress&cs=tinysrgb&w=600',
+              },
+              {
+                title: 'Premium Restaurant',
+                slug: 'premium-restaurant',
+                image: 'https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=600',
+              },
+              {
+                title: 'Multi-Specialty Hospital',
+                slug: 'multi-specialty-hospital',
+                image: 'https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=600',
+              },
+              {
+                title: 'Large Retail Hypermarket',
+                slug: 'large-retail-hypermarket',
+                image: 'https://images.pexels.com/photos/3962285/pexels-photo-3962285.jpeg?auto=compress&cs=tinysrgb&w=600',
+              },
+              {
+                title: 'Upstream Oil & Gas Facility',
+                slug: 'upstream-oil-gas-facility',
+                image: 'https://images.pexels.com/photos/2252619/pexels-photo-2252619.jpeg?auto=compress&cs=tinysrgb&w=600',
+              },
+              {
+                title: 'Dates Processing Facility',
+                slug: 'dates-processing-facility',
+                image: 'https://images.pexels.com/photos/3770580/pexels-photo-3770580.jpeg?auto=compress&cs=tinysrgb&w=600',
+              },
+              {
+                title: 'Urban Pharmacy',
+                slug: 'urban-pharmacy',
+                image: 'https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg?auto=compress&cs=tinysrgb&w=600',
               },
               {
                 title: 'Secured Perimeter with Real-Time Alerts',
@@ -445,11 +475,11 @@ export default function CaseStudyDetail() {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold text-white mb-3 line-clamp-2">
+                  <div className="p-4 sm:p-6">
+                    <h3 className="text-base sm:text-lg font-bold text-white mb-2 sm:mb-3 line-clamp-2">
                       {caseStudy.title}
                     </h3>
-                    <button className="text-blue-500 hover:text-blue-400 transition-colors text-sm font-medium">
+                    <button className="text-blue-500 hover:text-blue-400 transition-colors text-xs sm:text-sm font-medium">
                       Read more →
                     </button>
                   </div>

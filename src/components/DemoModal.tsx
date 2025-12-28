@@ -1,5 +1,6 @@
 import { X } from 'lucide-react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import BookingForm from './BookingForm';
 
 interface DemoModalProps {
   isOpen: boolean;
@@ -7,8 +8,11 @@ interface DemoModalProps {
 }
 
 export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
+  const [showCalendly, setShowCalendly] = useState(false);
+  const [formData, setFormData] = useState<{ companyName: string; email: string; phone: string; countryCode: string } | null>(null);
+
   useEffect(() => {
-    if (isOpen) {
+    if (isOpen && showCalendly) {
       // Check if Calendly script is already loaded
       const existingScript = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
       
@@ -20,9 +24,29 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
         document.body.appendChild(script);
       }
     }
+  }, [isOpen, showCalendly]);
+
+  useEffect(() => {
+    if (!isOpen) {
+      setShowCalendly(false);
+      setFormData(null);
+    }
   }, [isOpen]);
 
+  const handleFormSubmit = (data: { companyName: string; email: string; phone: string }) => {
+    setFormData(data);
+    setShowCalendly(true);
+    
+    // You can send form data to your backend here
+    console.log('Form submitted:', data);
+  };
+
   if (!isOpen) return null;
+
+  // Show form first, then Calendly after submission
+  if (!showCalendly) {
+    return <BookingForm onSubmit={handleFormSubmit} onClose={onClose} />;
+  }
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
