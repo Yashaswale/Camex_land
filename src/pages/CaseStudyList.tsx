@@ -26,7 +26,7 @@ const caseStudies = [
   {
     title: 'Upstream Oil & Gas Facility',
     slug: 'upstream-oil-gas-facility',
-    image: 'https://images.pexels.com/photos/2252619/pexels-photo-2252619.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://images.pexels.com/photos/3194524/pexels-photo-3194524.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     title: 'Dates Processing Facility',

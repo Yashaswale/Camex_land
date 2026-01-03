@@ -9,15 +9,29 @@ export default function Hero() {
       bg-black 
       pt-20 sm:pt-24 pb-20 sm:pb-32 overflow-hidden"
     >
+      {/* VIDEO BACKGROUND */}
+      <div className="absolute inset-0 z-10000">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-90"
+        >
+          <source src="/hero_vid.mp4" type="video/mp4" />
+        </video>
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/50"></div>
+      </div>
+
       {/* LEFT compact but intense radial glow */}
-      <div
+      {/* <div
         className="pointer-events-none absolute left-[-22%] top-1/2 -translate-y-1/2 
         w-[750px] h-[750px] rounded-full
         bg-[radial-gradient(circle,_rgba(6,105,255,0.80)_0%,_rgba(6,105,255,0.22)_40%,_rgba(6,105,255,0)_80%)]
         blur-[160px] opacity-95 z-0"
       />
 
-      {/* RIGHT compact but intense radial glow */}
       <div
         className="pointer-events-none absolute right-[-22%] top-1/2 -translate-y-1/2 
         w-[750px] h-[750px] rounded-full
@@ -25,14 +39,13 @@ export default function Hero() {
         blur-[160px] opacity-95 z-0"
       />
 
-      {/* CCTV IMAGE */}
       <div className="absolute top-40 left-0 opacity-90 z-0 hidden sm:block">
         <img
           src="/cctv.png"
           alt="CCTV"
           className="w-48 sm:w-64 h-48 sm:h-64 object-contain"
         />
-      </div>
+      </div> */}
 
       {/* MAIN CONTENT */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">

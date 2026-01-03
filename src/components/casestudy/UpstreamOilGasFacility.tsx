@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom';
+import Navigation from '../Navigation';
+import Footer from '../Footer';
 
 export default function UpstreamOilGasFacility() {
   return (
-    <section className="bg-black text-white py-20">
+    <div className="min-h-screen bg-black">
+      <Navigation />
+      <section className="bg-black text-white py-20 pt-24">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center gap-2 text-gray-400 text-sm mb-8">
           <Link to="/" className="hover:text-white">Home</Link>
@@ -108,6 +112,8 @@ export default function UpstreamOilGasFacility() {
         </div>
       </div>
     </section>
+    <Footer />
+    </div>
   );
 }
 

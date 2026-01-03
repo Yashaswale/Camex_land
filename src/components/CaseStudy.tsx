@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, FileText } from 'lucide-react';
+import { useState } from 'react';
+import PDFModal from './PDFModal';
 
 const caseStudies = [
   {
@@ -35,7 +37,7 @@ const caseStudies = [
     slug: 'upstream-oil-gas-facility',
     title: 'Upstream Oil & Gas Facility',
     description: 'A 24/7 operational site in Abu Dhabi Region uses Camex for PPE compliance, fall detection, and fire/smoke detection...',
-    image: 'https://images.pexels.com/photos/2252619/pexels-photo-2252619.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: './case_study/ONGC.png',
   },
   {
     id: 6,
@@ -74,7 +76,59 @@ const caseStudies = [
   },
 ];
 
+const onePagers = [
+  {
+    id: 1,
+    title: 'Hospital Camex Flyer',
+    pdfUrl: '/onepagers/Hospital_Camex_Flyer.pdf',
+    image: 'https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=600',
+  },
+  {
+    id: 2,
+    title: 'Pharmacy Store Analytics',
+    pdfUrl: '/onepagers/Pharmacy_Store _analytic_camex (1).pdf',
+    image: 'https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg?auto=compress&cs=tinysrgb&w=600',
+  },
+  {
+    id: 3,
+    title: 'Retail Camex Flyer',
+    pdfUrl: '/onepagers/Retail Camex_Flyer.pdf',
+    image: 'https://images.pexels.com/photos/3962285/pexels-photo-3962285.jpeg?auto=compress&cs=tinysrgb&w=600',
+  },
+  {
+    id: 4,
+    title: 'Warehouse One Pager',
+    pdfUrl: '/onepagers/Warehouse One pager (1).pdf',
+    image: 'https://images.pexels.com/photos/3761509/pexels-photo-3761509.jpeg?auto=compress&cs=tinysrgb&w=600',
+  },
+  {
+    id: 5,
+    title: 'Warehouse Camex Flyer',
+    pdfUrl: '/onepagers/Warehouse_Camex_Flyer.pdf',
+    image: 'https://images.pexels.com/photos/3761509/pexels-photo-3761509.jpeg?auto=compress&cs=tinysrgb&w=600',
+  },
+];
+
 export default function CaseStudy() {
+  const [selectedPDF, setSelectedPDF] = useState<{ pdfUrl: string; title: string } | null>(null);
+
+  const handlePDFClick = (pdfUrl: string, title: string) => {
+    // Auto-download the PDF
+    const link = document.createElement('a');
+    link.href = pdfUrl;
+    link.download = title.replace(/\s+/g, '_') + '.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    // Also open the modal for viewing
+    setSelectedPDF({ pdfUrl, title });
+  };
+
+  const handleClosePDF = () => {
+    setSelectedPDF(null);
+  };
+
   return (
     <section id="case-study" className="bg-black py-12 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -86,7 +140,7 @@ export default function CaseStudy() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-16 sm:mb-20">
           {caseStudies.map((study) => (
             <Link
               key={study.id}
@@ -117,7 +171,59 @@ export default function CaseStudy() {
             </Link>
           ))}
         </div>
+
+        {/* One Pagers Section */}
+        <div className="mb-8 sm:mb-12">
+          <p className="text-gray-400 text-xs sm:text-sm uppercase tracking-wider mb-2 sm:mb-3">ONE PAGERS</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4">Quick Overview Documents</h2>
+          <p className="text-gray-400 text-base sm:text-lg">
+            Download and explore our one-page flyers for different industries and use cases.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          {onePagers.map((pager) => (
+            <button
+              key={pager.id}
+              onClick={() => handlePDFClick(pager.pdfUrl, pager.title)}
+              className="group text-left"
+            >
+              <div className="rounded-xl overflow-hidden bg-[#0F1F3A] border border-gray-800 hover:border-gray-700 transition-all h-full flex flex-col">
+                <div className="aspect-video relative overflow-hidden">
+                  <img
+                    src={pager.image}
+                    alt={pager.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute top-2 right-2 bg-blue-500/90 rounded-lg p-2">
+                    <FileText className="w-5 h-5 text-white" />
+                  </div>
+                </div>
+                <div className="p-4 sm:p-6 flex flex-col flex-grow">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 line-clamp-2">
+                    {pager.title}
+                  </h3>
+                  <span className="flex items-center gap-2 text-blue-500 hover:text-blue-400 transition-colors group/btn mt-auto">
+                    <span className="text-sm font-medium">View PDF</span>
+                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                  </span>
+                </div>
+              </div>
+            </button>
+          ))}
+        </div>
       </div>
+
+      {/* PDF Modal */}
+      {selectedPDF && (
+        <PDFModal
+          isOpen={!!selectedPDF}
+          onClose={handleClosePDF}
+          pdfUrl={selectedPDF.pdfUrl}
+          title={selectedPDF.title}
+        />
+      )}
     </section>
   );
 }

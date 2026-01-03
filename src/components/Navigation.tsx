@@ -85,8 +85,14 @@ export default function Navigation() {
                 <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#2FA7FF]"></span>
               )}
             </Link>
-            <Link to="/developer-docs" className="text-gray-300 hover:text-white transition-colors text-sm">
+            <Link
+              to="/developer-docs"
+              className={navLinkClass('/developer-docs')}
+            >
               Developer Doc
+              {isActive('/developer-docs') && (
+                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#2FA7FF]"></span>
+              )}
             </Link>
             <Link
               to="/case-study"

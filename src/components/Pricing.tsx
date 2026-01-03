@@ -59,7 +59,7 @@ export default function Pricing() {
   function PlanCard({ plan }: { plan: typeof plans[number] }) {
     return (
       <div
-        className={`relative rounded-2xl p-6 sm:p-8 ${
+        className={`relative rounded-2xl p-6 sm:p-8 flex flex-col ${
           plan.popular
             ? 'bg-gradient-to-b from-blue-500/10 to-transparent border-2 border-blue-500'
             : 'bg-[#0F1F3A] border border-gray-800'
@@ -99,11 +99,7 @@ export default function Pricing() {
           </div>
         </div>
 
-        <Link to="/pricing" className={ctaButtonClass + ' block text-center text-sm sm:text-base'}>
-          View Detail
-        </Link>
-
-        <div className="space-y-4">
+        <div className="space-y-4 mb-6">
           {plan.features.map((feature) => (
             <div key={feature} className="flex items-start gap-3">
               <Check className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
@@ -111,6 +107,10 @@ export default function Pricing() {
             </div>
           ))}
         </div>
+
+        <Link to="/pricing" className={ctaButtonClass + ' block text-center text-sm sm:text-base mt-auto'}>
+          View Detail
+        </Link>
       </div>
     );
   }

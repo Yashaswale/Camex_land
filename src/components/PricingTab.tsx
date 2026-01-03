@@ -185,10 +185,6 @@ export default function PricingTab() {
                 </div>
               </div>
 
-              <button className="w-full py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-all mb-6 sm:mb-8 text-sm sm:text-base">
-                View Detail
-              </button>
-
               <div className="space-y-4">
                 {plan.features.map((feature) => (
                   <div key={feature} className="flex items-start gap-3">
