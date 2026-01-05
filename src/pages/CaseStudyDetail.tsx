@@ -434,12 +434,12 @@ export default function CaseStudyDetail() {
               {
                 title: 'Upstream Oil & Gas Facility',
                 slug: 'upstream-oil-gas-facility',
-                image: 'https://images.pexels.com/photos/3194524/pexels-photo-3194524.jpeg?auto=compress&cs=tinysrgb&w=600',
+                image: './case_study/ONGC.png',
               },
               {
                 title: 'Dates Processing Facility',
                 slug: 'dates-processing-facility',
-                image: 'https://images.pexels.com/photos/3770580/pexels-photo-3770580.jpeg?auto=compress&cs=tinysrgb&w=600',
+                image: './case_study/dates_processing.png',
               },
               {
                 title: 'Urban Pharmacy',
@@ -449,7 +449,7 @@ export default function CaseStudyDetail() {
               {
                 title: 'Secured Perimeter with Real-Time Alerts',
                 slug: 'secured-perimeter',
-                image: 'https://images.pexels.com/photos/2252619/pexels-photo-2252619.jpeg?auto=compress&cs=tinysrgb&w=600',
+                image: './case_study/secured_perimeter.png',
               },
               {
                 title: 'Smart Queue Analytics for Retail',

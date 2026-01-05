@@ -7,12 +7,13 @@ const cameras = [
   { id: 4, type: 'Crowd Counting', title: 'Retail Store', status: 'Live', video: '/Videos/vid4.mp4' },
   { id: 5, type: 'PPE detection', title: 'Factory', status: 'Live', video: '/Videos/vid5.mp4' },
   { id: 6, type: 'Theft Detection', title: 'Retail Store', status: 'Live', video: '/Videos/vid1.mp4' },
-  { id: 7, type: 'ANPR Detection', title: 'Road', status: 'Live', video: '/Videos/vid7.mp4' },
+  { id: 7, type: 'ANPR Detection', title: 'Road', status: 'Live', video: '/Videos/vid10.mp4' },
   { id: 8, type: 'Employee Monitoring', title: 'Factory', status: 'Live', video: '/Videos/vid8.mp4' },
-  { id: 9, type: 'Employee Monitoring', title: 'Road', status: 'Live', video: '/Videos/vid9.mp4' },
-  { id: 10, type: 'Employee Monitoring', title: 'Retail Store', status: 'Live', video: '/Videos/vid10.mp4' },
-  { id: 11, type: 'Employee Monitoring', title: 'Road', status: 'Live', video: '/Videos/vid11.mp4' },
-  { id: 12, type: 'Employee Monitoring', title: 'Retail Store', status: 'Live', video: '/Videos/vid12.mp4' },
+  { id: 9, type: 'Traffic Violation', title: 'Road', status: 'Live', video: '/Videos/vid9.mp4' },
+  { id: 10, type: 'Traffic Violation', title: 'Road', status: 'Live', video: '/Videos/vid10.mp4' },
+  { id: 11, type: 'Crowd Monitoring', title: 'Road', status: 'Live', video: '/Videos/vid11.mp4' },
+  { id: 12, type: 'Employee Monitoring', title: 'Factory', status: 'Live', video: '/Videos/vid12.mp4' },
+  { id: 13, type: 'PPE Detection', title: 'Restaurant', status: 'Live', video: '/Videos/vid13.mp4' },
 ];
 
 const categories = [

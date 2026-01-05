@@ -1,0 +1,339 @@
+import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
+
+export default function Privacy() {
+  return (
+    <div className="min-h-screen bg-black">
+      <Navigation />
+      <section className="pt-20 sm:pt-24 md:pt-32 pb-12 sm:pb-20 bg-black">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="mb-8 sm:mb-12">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+              Camex Privacy Policy
+            </h1>
+            <p className="text-gray-400 text-sm sm:text-base italic">
+              Effective Date: January 4, 2026<br />
+              Last Updated: January 4, 2026
+            </p>
+          </div>
+
+          <div className="prose prose-invert prose-lg max-w-none text-gray-300 space-y-8">
+            <div className="border-t border-gray-800 pt-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">1. Introduction & Scope</h2>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                This Privacy Policy (“Policy”) governs the processing of personal data in connection with the use of <strong>Camex</strong>, an AI-powered video analytics platform operated by <strong>Camex Technologies Pvt. Ltd.</strong> (hereinafter “Camex,” “we,” “us,” or “our”).
+              </p>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Camex provides enterprise-grade video analytics services—including people counting, occupancy estimation, behavioral insights, heatmaps, and real-time alerts—by processing video feeds from cameras owned and operated by our customers (“Customers”). Camex functions strictly as a <strong>data processor</strong> under applicable data protection laws, including the <strong>Digital Personal Data Protection Act, 2023 (India DPDP Act)</strong> and, where applicable, principles aligned with the <strong>EU General Data Protection Regulation (GDPR)</strong>.
+              </p>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                This Policy applies to all personal data processed by Camex in the course of delivering its services, irrespective of where such processing occurs. It does not apply to data processed by Customers in their independent capacity (e.g., data collected via their own websites or applications, unrelated to the Camex platform).
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                By using or accessing Camex, Customers and End Users (as defined below) consent to the practices described herein. Camex does not sell, rent, or monetize personal data. All processing is performed solely for the purposes of delivering contracted services.
+              </p>
+            </div>
+
+            <div className="border-t border-gray-800 pt-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">2. Information We Collect</h2>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Camex processes data in three primary categories:
+              </p>
+              
+              <div className="mb-6">
+                <h3 className="text-xl sm:text-2xl font-semibold text-white mb-3">2.1 Account Information</h3>
+                <p className="text-gray-300 leading-relaxed mb-2">Data provided by Customers to establish and administer Camex accounts, including:</p>
+                <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                  <li>Organization name, billing address, and contact details</li>
+                  <li>Authorized user names, email addresses, job titles, and authentication credentials (e.g., hashed passwords, MFA tokens)</li>
+                  <li>Payment processor reference IDs (Camex does not store raw payment card data)</li>
+                </ul>
+              </div>
+
+              <div className="mb-6">
+                <h3 className="text-xl sm:text-2xl font-semibold text-white mb-3">2.2 Video & Camera Feed Data</h3>
+                <p className="text-gray-300 leading-relaxed mb-2">
+                  Raw or minimally processed video streams transmitted from Customer-owned or -controlled camera systems, which may contain personal data (e.g., biometric identifiers, facial images, gait patterns, location data). Such data is received and processed only upon explicit instruction from the Customer and per defined contractual terms.
+                </p>
+                <p className="text-gray-300 leading-relaxed">
+                  Camex does <strong>not</strong> collect video data from public or third-party cameras unless explicitly configured by the Customer.
+                </p>
+              </div>
+
+              <div className="mb-6">
+                <h3 className="text-xl sm:text-2xl font-semibold text-white mb-3">2.3 Analytics & Metadata</h3>
+                <p className="text-gray-300 leading-relaxed mb-2">Derived outputs generated by Camex's AI models, including:</p>
+                <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                  <li>Aggregated or anonymized analytics (e.g., occupancy counts, dwell times, directional flow)</li>
+                  <li>Pseudonymized identifiers for tracking unique individuals across frames (e.g., transient object IDs)</li>
+                  <li>Alert logs (e.g., loitering, crowd density thresholds exceeded)</li>
+                  <li>Heatmap coordinates (spatial density representations, typically de-identified)</li>
+                </ul>
+                <p className="text-gray-300 leading-relaxed mt-2">
+                  Where feasible and contractually required, Camex employs techniques (e.g., blurring, masking, on-device anonymization) to minimize identifiability.
+                </p>
+              </div>
+
+              <div className="mb-6">
+                <h3 className="text-xl sm:text-2xl font-semibold text-white mb-3">2.4 Technical & Usage Data</h3>
+                <p className="text-gray-300 leading-relaxed mb-2">System-level information necessary for service delivery and security, including:</p>
+                <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                  <li>Device identifiers (e.g., camera MAC address, firmware version)</li>
+                  <li>IP addresses (of cameras and Customer admin endpoints)</li>
+                  <li>Timestamps, API call logs, error reports</li>
+                  <li>Bandwidth usage, frame rates, connectivity status</li>
+                  <li>Admin user activity logs (e.g., configuration changes, export requests)</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="border-t border-gray-800 pt-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">3. Purpose of Data Processing</h2>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Camex processes personal data <strong>only</strong> for the following legitimate purposes, as instructed by the Customer:
+              </p>
+              <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4 ml-4">
+                <li><strong>Service Provision</strong>: To enable real-time and historical video analytics (e.g., occupancy tracking, anomaly detection).</li>
+                <li><strong>Platform Operation & Maintenance</strong>: To monitor system health, debug issues, and ensure uptime.</li>
+                <li><strong>Security & Fraud Prevention</strong>: To detect and mitigate unauthorized access, data breaches, or misuse.</li>
+                <li><strong>Compliance & Auditing</strong>: To fulfill legal obligations and support Customer compliance with data protection laws.</li>
+                <li><strong>Improvement of AI Models</strong> (strictly anonymized/aggregated): To refine model accuracy and robustness—<strong>only</strong> using datasets that have been irreversibly anonymized and stripped of direct/indirect identifiers.</li>
+              </ul>
+              <p className="text-gray-300 leading-relaxed">
+                All processing is governed by a <strong>Data Processing Addendum (DPA)</strong> executed between Camex and the Customer, incorporating standard contractual clauses (where applicable) and aligning with the DPDP Act's principles of lawful, fair, and transparent processing.
+              </p>
+            </div>
+
+            <div className="border-t border-gray-800 pt-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">4. AI & Automated Processing Disclosure</h2>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Camex employs computer vision and machine learning models to analyze video feeds and generate insights. Processing includes:
+              </p>
+              <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4 ml-4">
+                <li><strong>Automated Decision-Making</strong>: Certain alerts (e.g., occupancy threshold breach) may trigger automated actions (e.g., email/SMS alerts, API webhooks). However, Camex does <strong>not</strong> make decisions producing legal or similarly significant effects on individuals (e.g., access denial, scoring, employment decisions).</li>
+                <li><strong>Profiling</strong>: Camex may construct transient behavioral profiles (e.g., movement trajectories, dwell zones) for analytics purposes. These profiles are ephemeral, session-scoped, and not retained beyond the analytics pipeline unless explicitly configured for retention by the Customer (subject to retention settings in Section 7).</li>
+                <li><strong>Human Oversight</strong>: Critical alerts (e.g., security incidents) are designed to require human review by the Customer. Camex does not autonomously take physical actions (e.g., lock doors, notify law enforcement).</li>
+              </ul>
+              <p className="text-gray-300 leading-relaxed">
+                Customers retain full control over whether to enable specific AI features (e.g., facial detection, gender estimation). Where gender/age estimation is enabled, models operate on anonymized representations, and outputs are probabilistic—not deterministic—and intended for aggregate trend analysis only.
+              </p>
+            </div>
+
+            <div className="border-t border-gray-800 pt-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">5. Data Ownership & Control Clarification</h2>
+              <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4 ml-4">
+                <li><strong>Data Ownership</strong>: All input data—including video feeds, configuration settings, and derived analytics—remains the exclusive property of the Customer. Camex claims no ownership rights over Customer data.</li>
+                <li><strong>Processor Role</strong>: Camex acts solely as a <em>data processor</em> under the DPDP Act (Section 8) and equivalent frameworks. We process data only on documented instructions from the Customer and in accordance with the DPA.</li>
+                <li><strong>Subprocessing</strong>: Camex engages subprocessors only with prior Customer authorization (via DPA or advance notice) and ensures equivalent data protection obligations.</li>
+                <li><strong>Data Portability</strong>: Customers may export analytics outputs (e.g., CSV, JSON) and metadata via the Camex dashboard or API at any time.</li>
+              </ul>
+              <p className="text-gray-300 leading-relaxed">
+                Camex does <strong>not</strong> use Customer data to train foundational models for third-party benefit unless explicitly permitted under a separate, opt-in agreement with robust anonymization safeguards.
+              </p>
+            </div>
+
+            <div className="border-t border-gray-800 pt-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">6. Data Sharing & Third-Party Processors</h2>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Camex does not sell, rent, or share personal data for advertising or commercial purposes.
+              </p>
+              <p className="text-gray-300 leading-relaxed mb-4">Data may be disclosed <strong>only</strong> under the following conditions:</p>
+              <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4 ml-4">
+                <li><strong>Subprocessors</strong>: Cloud infrastructure (e.g., AWS, Azure), identity providers (e.g., Okta), logging/monitoring services (e.g., Datadog), and support tools (e.g., Zendesk). A current list of subprocessors is maintained at: <a href="https://camex.ai/subprocessors" className="text-blue-500 hover:text-blue-400">https://camex.ai/subprocessors</a> and updated quarterly. Customers may object to new subprocessors within 10 business days of notice.</li>
+                <li><strong>Legal Obligations</strong>: If required by law (e.g., court order, regulatory inquiry), Camex will notify the Customer in advance unless prohibited.</li>
+                <li><strong>Business Transfers</strong>: In the event of merger, acquisition, or asset sale, Customer data may be transferred under confidentiality and continuity assurances. Customers will be notified.</li>
+              </ul>
+              <p className="text-gray-300 leading-relaxed">
+                No third party receives raw video data without explicit Customer configuration (e.g., API integrations to Customer's own systems).
+              </p>
+            </div>
+
+            <div className="border-t border-gray-800 pt-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">7. Data Retention & Storage Policies</h2>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Retention periods are <strong>Customer-configurable</strong> and enforced automatically:
+              </p>
+              <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4 ml-4">
+                <li><strong>Raw Video Feeds</strong>: Not stored by default. If video caching is enabled (e.g., for review workflows), duration is set by Customer (e.g., 24h, 7 days) and auto-deleted thereafter.</li>
+                <li><strong>Analytics & Metadata</strong>: Retained for up to <strong>24 months</strong> unless a shorter period is configured by the Customer via dashboard settings.</li>
+                <li><strong>Account & Log Data</strong>: Retained for <strong>36 months</strong> post-termination for audit, security, and legal compliance.</li>
+              </ul>
+              <p className="text-gray-300 leading-relaxed">
+                Upon termination of service, Customers may request immediate deletion of all data (subject to backup purge cycles, typically ≤30 days). Anonymized aggregate statistics (non-identifiable) may be retained indefinitely for product improvement.
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                Camex implements automated lifecycle policies and conducts annual data minimization audits.
+              </p>
+            </div>
+
+            <div className="border-t border-gray-800 pt-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">8. Data Security Measures</h2>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Camex employs industry-standard technical and organizational measures aligned with ISO/IEC 27001 principles, including:
+              </p>
+              <div className="mb-4">
+                <p className="text-gray-300 leading-relaxed mb-2"><strong>Encryption:</strong></p>
+                <ul className="list-disc list-inside text-gray-300 space-y-1 ml-6">
+                  <li><em>In transit</em>: TLS 1.3+ for all data transmissions.</li>
+                  <li><em>At rest</em>: AES-256 encryption for stored data (including backups). Camera-to-cloud streams use SRTP or equivalent.</li>
+                </ul>
+              </div>
+              <div className="mb-4">
+                <p className="text-gray-300 leading-relaxed mb-2"><strong>Access Controls:</strong></p>
+                <ul className="list-disc list-inside text-gray-300 space-y-1 ml-6">
+                  <li>Role-based access (RBAC) with least-privilege enforcement.</li>
+                  <li>MFA required for all administrative access.</li>
+                  <li>Just-in-time (JIT) privilege elevation and quarterly access reviews.</li>
+                </ul>
+              </div>
+              <div className="mb-4">
+                <p className="text-gray-300 leading-relaxed mb-2"><strong>Infrastructure Security:</strong></p>
+                <ul className="list-disc list-inside text-gray-300 space-y-1 ml-6">
+                  <li>Network segmentation, DDoS mitigation, WAF, and intrusion detection.</li>
+                  <li>Regular vulnerability scanning and penetration testing (biannual, by independent firms).</li>
+                </ul>
+              </div>
+              <div className="mb-4">
+                <p className="text-gray-300 leading-relaxed mb-2"><strong>AI-Specific Safeguards:</strong></p>
+                <ul className="list-disc list-inside text-gray-300 space-y-1 ml-6">
+                  <li>Model input sanitization and adversarial robustness testing.</li>
+                  <li>On-premise/edge deployment options to avoid cloud transmission.</li>
+                  <li>Differential privacy and k-anonymity controls for aggregate reporting.</li>
+                </ul>
+              </div>
+              <p className="text-gray-300 leading-relaxed">
+                Incident response plans are tested annually. Data breaches are reported to Customers within <strong>72 hours</strong> of confirmation, per DPDP Act Section 9 obligations.
+              </p>
+            </div>
+
+            <div className="border-t border-gray-800 pt-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">9. Customer/User Responsibilities</h2>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Camex operates on a shared responsibility model. Customers must:
+              </p>
+              <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4 ml-4">
+                <li>Ensure lawful basis for video surveillance under applicable law (e.g., legitimate interest, consent, legal obligation).</li>
+                <li>Display clear, visible signage at monitored locations informing individuals of video analytics usage, purpose, and contact details.</li>
+                <li>Conduct Data Protection Impact Assessments (DPIAs) where required (e.g., systematic monitoring at scale, sensitive locations).</li>
+                <li>Configure Camex settings to minimize data collection (e.g., disable facial recognition in private areas, set retention limits).</li>
+                <li>Obtain necessary consents (where consent is the lawful basis) and honor data subject requests.</li>
+                <li>Comply with local labor, privacy, and sector-specific regulations (e.g., healthcare, education).</li>
+              </ul>
+              <p className="text-gray-300 leading-relaxed">
+                Camex provides template signage, DPIA guidance, and compliance checklists—but ultimate legal accountability rests with the Customer.
+              </p>
+            </div>
+
+            <div className="border-t border-gray-800 pt-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">10. User Rights</h2>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Where individuals ("Data Subjects") are identifiable in processed data, they may exercise rights under the DPDP Act (e.g., Sections 5–7), including:
+              </p>
+              <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4 ml-4">
+                <li><strong>Right to Access</strong>: Request confirmation of processing and obtain a copy of their personal data held by Camex (via Customer's dashboard export or support request).</li>
+                <li><strong>Right to Correction/Update</strong>: Submit updates to inaccurate data (processed via Customer-initiated correction workflows).</li>
+                <li><strong>Right to Erasure</strong>: Request deletion of personal data, subject to legal retention obligations.</li>
+                <li><strong>Right to Grievance Redressal</strong>: Lodge complaints via Camex's designated Grievance Officer.</li>
+              </ul>
+              <p className="text-gray-300 leading-relaxed">
+                Requests must be submitted by the Data Subject to the <strong>Customer</strong> (as data fiduciary), who will coordinate with Camex for fulfillment. Camex responds to Customer-validated requests within <strong>30 days</strong>.
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                Note: Rights may be limited where analytics are fully anonymized or where overriding legal grounds apply (e.g., evidence preservation).
+              </p>
+            </div>
+
+            <div className="border-t border-gray-800 pt-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">11. Cross-Border & Cloud Data Processing</h2>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Camex operates on a <strong>region-locked cloud architecture</strong>. By default, Customer data is processed and stored in the geographic region selected at onboarding (e.g., India, EU, US-East). Cross-border transfers occur <strong>only</strong> under:
+              </p>
+              <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4 ml-4">
+                <li>Adequacy decisions (e.g., India-to-EU via approved mechanisms post-DPDP rules), or</li>
+                <li>Standard Contractual Clauses (SCCs) or equivalent safeguards, incorporated in the DPA.</li>
+              </ul>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Customers may restrict processing to sovereign cloud environments (e.g., AWS Mumbai) upon request. All transfers comply with DPDP Act Section 16 and Chapter VI requirements.
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                Data localization commitments are contractually binding and auditable.
+              </p>
+            </div>
+
+            <div className="border-t border-gray-800 pt-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">12. Cookies & Tracking Technologies</h2>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Camex's administrative web interface and marketing website use limited cookies and similar technologies:
+              </p>
+              <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4 ml-4">
+                <li><strong>Essential Cookies</strong>: Required for authentication, session management, and security (e.g., CSRF tokens). Cannot be disabled.</li>
+                <li><strong>Analytics Cookies</strong> (optional): For aggregated usage metrics (e.g., page views); governed by consent banner on public pages.</li>
+                <li><strong>Third-Party Embedded Content</strong>: Videos or documents may use provider cookies (e.g., YouTube, Vimeo); covered under their policies.</li>
+              </ul>
+              <p className="text-gray-300 leading-relaxed">
+                No tracking for behavioral advertising occurs. Cookie preferences can be managed via the consent manager on <a href="https://camex.ai" className="text-blue-500 hover:text-blue-400">camex.ai</a>.
+              </p>
+            </div>
+
+            <div className="border-t border-gray-800 pt-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">13. Children's Privacy</h2>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Camex is not intended for use in environments primarily serving individuals under the age of <strong>18</strong> (or the age of majority in the relevant jurisdiction). Customers warrant they will not deploy Camex in schools, daycare centers, or similar settings without implementing age-appropriate safeguards and obtaining parental consent where legally required.
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                Camex does not knowingly collect or process personal data from children. If such data is inadvertently received, it will be promptly deleted upon identification.
+              </p>
+            </div>
+
+            <div className="border-t border-gray-800 pt-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">14. Policy Updates</h2>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Camex reviews this Policy biannually and updates it to reflect legal, technical, or operational changes. Material revisions will be:
+              </p>
+              <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4 ml-4">
+                <li>Posted at <a href="https://camex.ai/privacy" className="text-blue-500 hover:text-blue-400">https://camex.ai/privacy</a> with a revised “Effective Date”</li>
+                <li>Communicated via email to account administrators</li>
+                <li>Made available in the Customer portal 30 days prior to implementation</li>
+              </ul>
+              <p className="text-gray-300 leading-relaxed">
+                Continued use of Camex after updates constitutes acceptance. Historical versions are archived upon request.
+              </p>
+            </div>
+
+            <div className="border-t border-gray-800 pt-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">15. Contact Information for Privacy Requests</h2>
+              <p className="text-gray-300 leading-relaxed mb-4">For privacy-related inquiries, data subject requests, or DPA execution:</p>
+              <div className="bg-[#0F1F3A] border border-gray-800 rounded-lg p-6 mb-4">
+                <p className="text-white font-semibold mb-2">Data Protection Officer (DPO) / Grievance Officer</p>
+                <p className="text-white font-semibold mb-2">Camex Technologies Pvt. Ltd.</p>
+                <p className="text-gray-300 mb-1">Email: <a href="mailto:privacy@camex.ai" className="text-blue-500 hover:text-blue-400">privacy@camex.ai</a></p>
+                <p className="text-gray-300 mb-1">Phone: +91-XXXXXXXXXX (India)</p>
+                <p className="text-gray-300 mb-1">Postal Address:</p>
+                <p className="text-gray-300 mb-1">Level 8, Raheja Towers,</p>
+                <p className="text-gray-300 mb-1">M.G. Road, Bengaluru – 560001,</p>
+                <p className="text-gray-300">Karnataka, India</p>
+              </div>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                For EU/UK matters, our GDPR representative is:<br />
+                [EU Representative Name],<br />
+                [Address],<br />
+                Email: <a href="mailto:eu-rep@camex.ai" className="text-blue-500 hover:text-blue-400">eu-rep@camex.ai</a>
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                Camex acknowledges all requests within <strong>5 business days</strong> and provides substantive responses within statutory timelines.
+              </p>
+            </div>
+
+            <div className="border-t border-gray-800 pt-8">
+              <p className="text-gray-400 italic text-sm">
+                This Privacy Policy is part of the Camex Terms of Service and Data Processing Addendum. In case of conflict, the DPA shall prevail for data processing matters.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <Footer />
+    </div>
+  );
+}
+

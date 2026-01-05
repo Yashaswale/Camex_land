@@ -70,7 +70,7 @@ export default function Footer() {
                 Home
               </Link>
               <Link to="/developer-docs" className="hover:text-white transition">
-                Developer Docs
+                Developer Doc
               </Link>
               <Link to="/case-study" className="hover:text-white transition">
                 Case Study
@@ -96,12 +96,12 @@ export default function Footer() {
 
           {/* Legal */}
           <div className="flex justify-center gap-6 text-xs text-gray-500">
-            <a href="#" className="hover:text-gray-300 transition">
+            <Link to="/privacy" className="hover:text-gray-300 transition">
               Privacy Policy
-            </a>
-            <a href="#" className="hover:text-gray-300 transition">
+            </Link>
+            <Link to="/terms" className="hover:text-gray-300 transition">
               Terms & Conditions
-            </a>
+            </Link>
           </div>
         </div>
       </section>
