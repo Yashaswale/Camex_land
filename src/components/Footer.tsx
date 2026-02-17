@@ -49,7 +49,7 @@ export default function Footer() {
               href="mailto:sales@camex.live"
               className="text-blue-500 hover:text-blue-400 font-medium"
             >
-              sales@camex.live
+              sales@dezzex.com
             </a>
           </div>
         </div>

@@ -3,6 +3,7 @@ import { X } from 'lucide-react';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import { isValidPhoneNumber, parsePhoneNumber } from 'react-phone-number-input';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 interface BookingFormProps {
   onSubmit: (data: { companyName: string; email: string; phone: string }) => void;
@@ -42,6 +43,7 @@ export default function BookingForm({ onSubmit, onClose }: BookingFormProps) {
   const [companyName, setCompanyName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState<string>('');
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -63,6 +65,10 @@ export default function BookingForm({ onSubmit, onClose }: BookingFormProps) {
       newErrors.phone = 'Phone number is required';
     } else if (!isValidPhoneNumber(phone)) {
       newErrors.phone = 'Please enter a valid phone number';
+    }
+
+    if (!captchaToken) {
+      newErrors.captcha = 'Please complete the CAPTCHA';
     }
 
     setErrors(newErrors);
@@ -101,7 +107,7 @@ export default function BookingForm({ onSubmit, onClose }: BookingFormProps) {
 
     try {
       await fetch(
-        'https://docs.google.com/forms/d/e/1FAIpQLSfK4fESMYFw8SuO8DhRSe5MlFMM3zBoEl-KgAfPb_oj-FFyuA/formResponse',
+          'https://docs.google.com/forms/d/e/1FAIpQLSfK4fESMYFw8SuO8DhRSe5MlFMM3zBoEl-KgAfPb_oj-FFyuA/formResponse',
         {
           method: 'POST',
           mode: 'no-cors',
@@ -207,7 +213,7 @@ export default function BookingForm({ onSubmit, onClose }: BookingFormProps) {
               >
                 <PhoneInput
                   international
-                  defaultCountry="IN"
+                  defaultCountry="AE"
                   value={phone}
                   onChange={(value) => {
                     setPhone(value || '');
@@ -217,6 +223,20 @@ export default function BookingForm({ onSubmit, onClose }: BookingFormProps) {
               </div>
               {errors.phone && (
                 <p className="mt-1 text-sm text-red-400">{errors.phone}</p>
+              )}
+            </div>
+
+            {/* CAPTCHA */}
+            <div>
+              <ReCAPTCHA
+                sitekey="6LfrPY0sAAAAAP19eGSPfS_ROHfkSv8qLLoF1uk2"
+                onChange={(token) => {
+                  setCaptchaToken(token);
+                  if (errors.captcha) setErrors({ ...errors, captcha: '' });
+                }}
+              />
+              {errors.captcha && (
+                <p className="mt-1 text-sm text-red-400">{errors.captcha}</p>
               )}
             </div>
 
