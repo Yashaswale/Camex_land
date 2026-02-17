@@ -46,10 +46,10 @@ export default function Footer() {
           <div className="pt-2 text-gray-400 text-sm">
             Prefer email? Reach us at{' '}
             <a
-              href="mailto:sales@camex.com"
+              href="mailto:sales@camex.live"
               className="text-blue-500 hover:text-blue-400 font-medium"
             >
-              sales@camex.com
+              sales@camex.live
             </a>
           </div>
         </div>

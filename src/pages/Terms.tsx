@@ -335,13 +335,13 @@ export default function Terms() {
               <p className="text-gray-300 leading-relaxed mb-4">For notices, support requests, or legal inquiries, please contact:</p>
               <div className="bg-[#0F1F3A] border border-gray-800 rounded-lg p-6 mb-4">
                 <p className="text-white font-semibold mb-2">Camex Legal & Compliance Team</p>
-                <p className="text-gray-300 mb-1">Email: <a href="mailto:legal@camex.ai" className="text-blue-500 hover:text-blue-400">legal@camex.ai</a></p>
+                <p className="text-gray-300 mb-1">Email: <a href="mailto:legal@camex.live" className="text-blue-500 hover:text-blue-400">legal@camex.live</a></p>
                 <p className="text-gray-300 mb-1">Address:</p>
                 <p className="text-gray-300 mb-1">[To be inserted: Registered Office Address]</p>
                 <p className="text-gray-300">New Delhi, India</p>
               </div>
               <p className="text-gray-300 leading-relaxed mb-4">
-                For data subject requests or data protection inquiries, please contact the designated Data Protection Officer at: <a href="mailto:dpo@camex.ai" className="text-blue-500 hover:text-blue-400">dpo@camex.ai</a>
+                For data subject requests or data protection inquiries, please contact the designated Data Protection Officer at: <a href="mailto:dpo@camex.live" className="text-blue-500 hover:text-blue-400">dpo@camex.live</a>
               </p>
               <p className="text-gray-300 leading-relaxed">
                 All formal notices must be in writing and sent via registered post or email with confirmation of receipt.

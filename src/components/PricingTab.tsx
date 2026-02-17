@@ -171,14 +171,14 @@ export default function PricingTab() {
                         <div className="flex items-baseline gap-2">
                           <span className="text-2xl sm:text-3xl font-bold text-gray-500 line-through">${plan.price.yearly}</span>
                           <span className="text-4xl sm:text-5xl font-bold text-white">${Math.round(plan.price.yearly * 0.9)}</span>
-                          <span className="text-gray-400 text-sm sm:text-base">/year</span>
+                          <span className="text-gray-400 text-sm sm:text-base">yearly/camera</span>
                         </div>
                         <span className="text-green-400 text-xs sm:text-sm font-medium">Save 10%</span>
                       </>
                     ) : (
                       <div className="flex items-baseline gap-1">
                         <span className="text-4xl sm:text-5xl font-bold text-white">${plan.price.monthly}</span>
-                        <span className="text-gray-400 text-sm sm:text-base">/month</span>
+                        <span className="text-gray-400 text-sm sm:text-base">monthly/camera</span>
                       </div>
                     )}
                   </div>
@@ -208,10 +208,10 @@ export default function PricingTab() {
               {billingCycle === 'yearly' ? (
                 <>
                   <p className="font-bold text-sm sm:text-base line-through opacity-75">${plans[0].price.yearly}</p>
-                  <p className="font-bold text-sm sm:text-base">${Math.round(plans[0].price.yearly * 0.9)} /year</p>
+                  <p className="font-bold text-sm sm:text-base">${Math.round(plans[0].price.yearly * 0.9)} yearly/camera</p>
                 </>
               ) : (
-                <p className="font-bold text-sm sm:text-base">${plans[0].price.monthly} /month</p>
+                <p className="font-bold text-sm sm:text-base">${plans[0].price.monthly} monthly/camera</p>
               )}
               <p className="text-xs sm:text-sm">Basic</p>
             </div>
@@ -220,10 +220,10 @@ export default function PricingTab() {
               {billingCycle === 'yearly' ? (
                 <>
                   <p className="font-bold text-sm sm:text-base line-through opacity-75">${plans[1].price.yearly}</p>
-                  <p className="font-bold text-sm sm:text-base">${Math.round(plans[1].price.yearly * 0.9)} /year</p>
+                  <p className="font-bold text-sm sm:text-base">${Math.round(plans[1].price.yearly * 0.9)} yearly/camera</p>
                 </>
               ) : (
-                <p className="font-bold text-sm sm:text-base">${plans[1].price.monthly} /month</p>
+                <p className="font-bold text-sm sm:text-base">${plans[1].price.monthly} monthly/camera</p>
               )}
               <p className="text-xs sm:text-sm">Standard</p>
             </div>
@@ -232,10 +232,10 @@ export default function PricingTab() {
               {billingCycle === 'yearly' ? (
                 <>
                   <p className="font-bold text-sm sm:text-base line-through opacity-75">${plans[2].price.yearly}</p>
-                  <p className="font-bold text-sm sm:text-base">${Math.round(plans[2].price.yearly * 0.9)} /year</p>
+                  <p className="font-bold text-sm sm:text-base">${Math.round(plans[2].price.yearly * 0.9)} yearly/camera</p>
                 </>
               ) : (
-                <p className="font-bold text-sm sm:text-base">${plans[2].price.monthly} /month</p>
+                <p className="font-bold text-sm sm:text-base">${plans[2].price.monthly} monthly/camera</p>
               )}
               <p className="text-xs sm:text-sm">Premium</p>
             </div>
@@ -284,6 +284,10 @@ export default function PricingTab() {
               Get Access
             </button>
           </div>
+        </div>
+
+        <div className="mt-8 text-center">
+          <p className="text-gray-400 text-xs sm:text-sm italic">* Prices may vary based on the region</p>
         </div>
       </div>
     </section>

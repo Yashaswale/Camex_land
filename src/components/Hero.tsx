@@ -61,7 +61,7 @@ export default function Hero() {
             using your <span className="text-blue-500">CCTV</span> cameras
           </h1>
 
-          <p className="text-sm sm:text-base lg:text-lg text-gray-400 mb-8 sm:mb-10 max-w-3xl leading-relaxed px-4">
+          <p className="text-sm sm:text-base lg:text-lg text-gray-200 mb-8 sm:mb-10 max-w-3xl leading-relaxed px-4">
             Camex transforms traditional CCTV into an AI-powered analytics layer, delivering real-time insights, instant alerts,
             and actionable data that helps protect your people, assets, and operations.
           </p>
@@ -75,7 +75,7 @@ export default function Hero() {
             </button>
             <button
               onClick={openModal}
-              className="w-full sm:w-auto px-6 sm:px-8 py-3 border border-gray-600 hover:border-gray-500 text-white rounded-lg font-medium transition-all"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 border border-gray-400 hover:border-gray-500 text-white rounded-lg font-medium transition-all"
             >
               Sign Up
             </button>

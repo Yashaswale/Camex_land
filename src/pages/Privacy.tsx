@@ -139,7 +139,7 @@ export default function Privacy() {
               </p>
               <p className="text-gray-300 leading-relaxed mb-4">Data may be disclosed <strong>only</strong> under the following conditions:</p>
               <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4 ml-4">
-                <li><strong>Subprocessors</strong>: Cloud infrastructure (e.g., AWS, Azure), identity providers (e.g., Okta), logging/monitoring services (e.g., Datadog), and support tools (e.g., Zendesk). A current list of subprocessors is maintained at: <a href="https://camex.ai/subprocessors" className="text-blue-500 hover:text-blue-400">https://camex.ai/subprocessors</a> and updated quarterly. Customers may object to new subprocessors within 10 business days of notice.</li>
+                <li><strong>Subprocessors</strong>: Cloud infrastructure (e.g., AWS, Azure), identity providers (e.g., Okta), logging/monitoring services (e.g., Datadog), and support tools (e.g., Zendesk). A current list of subprocessors is maintained at: <a href="https://camex.live/subprocessors" className="text-blue-500 hover:text-blue-400">https://camex.live/subprocessors</a> and updated quarterly. Customers may object to new subprocessors within 10 business days of notice.</li>
                 <li><strong>Legal Obligations</strong>: If required by law (e.g., court order, regulatory inquiry), Camex will notify the Customer in advance unless prohibited.</li>
                 <li><strong>Business Transfers</strong>: In the event of merger, acquisition, or asset sale, Customer data may be transferred under confidentiality and continuity assurances. Customers will be notified.</li>
               </ul>
@@ -271,7 +271,7 @@ export default function Privacy() {
                 <li><strong>Third-Party Embedded Content</strong>: Videos or documents may use provider cookies (e.g., YouTube, Vimeo); covered under their policies.</li>
               </ul>
               <p className="text-gray-300 leading-relaxed">
-                No tracking for behavioral advertising occurs. Cookie preferences can be managed via the consent manager on <a href="https://camex.ai" className="text-blue-500 hover:text-blue-400">camex.ai</a>.
+                No tracking for behavioral advertising occurs. Cookie preferences can be managed via the consent manager on <a href="https://camex.live" className="text-blue-500 hover:text-blue-400">camex.live</a>.
               </p>
             </div>
 
@@ -291,7 +291,7 @@ export default function Privacy() {
                 Camex reviews this Policy biannually and updates it to reflect legal, technical, or operational changes. Material revisions will be:
               </p>
               <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4 ml-4">
-                <li>Posted at <a href="https://camex.ai/privacy" className="text-blue-500 hover:text-blue-400">https://camex.ai/privacy</a> with a revised “Effective Date”</li>
+                <li>Posted at <a href="https://camex.live/privacy" className="text-blue-500 hover:text-blue-400">https://camex.live/privacy</a> with a revised “Effective Date”</li>
                 <li>Communicated via email to account administrators</li>
                 <li>Made available in the Customer portal 30 days prior to implementation</li>
               </ul>
@@ -306,7 +306,7 @@ export default function Privacy() {
               <div className="bg-[#0F1F3A] border border-gray-800 rounded-lg p-6 mb-4">
                 <p className="text-white font-semibold mb-2">Data Protection Officer (DPO) / Grievance Officer</p>
                 <p className="text-white font-semibold mb-2">Camex Technologies Pvt. Ltd.</p>
-                <p className="text-gray-300 mb-1">Email: <a href="mailto:privacy@camex.ai" className="text-blue-500 hover:text-blue-400">privacy@camex.ai</a></p>
+                <p className="text-gray-300 mb-1">Email: <a href="mailto:privacy@camex.live" className="text-blue-500 hover:text-blue-400">privacy@camex.live</a></p>
                 <p className="text-gray-300 mb-1">Phone: +91-XXXXXXXXXX (India)</p>
                 <p className="text-gray-300 mb-1">Postal Address:</p>
                 <p className="text-gray-300 mb-1">Level 8, Raheja Towers,</p>
@@ -317,7 +317,7 @@ export default function Privacy() {
                 For EU/UK matters, our GDPR representative is:<br />
                 [EU Representative Name],<br />
                 [Address],<br />
-                Email: <a href="mailto:eu-rep@camex.ai" className="text-blue-500 hover:text-blue-400">eu-rep@camex.ai</a>
+                Email: <a href="mailto:eu-rep@camex.live" className="text-blue-500 hover:text-blue-400">eu-rep@camex.live</a>
               </p>
               <p className="text-gray-300 leading-relaxed">
                 Camex acknowledges all requests within <strong>5 business days</strong> and provides substantive responses within statutory timelines.
