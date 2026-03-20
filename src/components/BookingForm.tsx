@@ -3,6 +3,7 @@ import { X } from 'lucide-react';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import { isValidPhoneNumber, parsePhoneNumber } from 'react-phone-number-input';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 interface BookingFormProps {
   onSubmit: (data: { companyName: string; email: string; phone: string }) => void;
@@ -42,6 +43,7 @@ export default function BookingForm({ onSubmit, onClose }: BookingFormProps) {
   const [companyName, setCompanyName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState<string>('');
+  const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -63,6 +65,10 @@ export default function BookingForm({ onSubmit, onClose }: BookingFormProps) {
       newErrors.phone = 'Phone number is required';
     } else if (!isValidPhoneNumber(phone)) {
       newErrors.phone = 'Please enter a valid phone number';
+    }
+
+    if (!recaptchaValue) {
+      newErrors.recaptcha = 'Please complete the reCAPTCHA verification';
     }
 
     setErrors(newErrors);
@@ -97,6 +103,10 @@ export default function BookingForm({ onSubmit, onClose }: BookingFormProps) {
     // TODO: Replace 'entry.XXXXXXXXX' with your actual Google Form entry ID for Country Code
     if (countryCode) {
       formData.append('entry.XXXXXXXXX', countryCode);      // Country Code (update this entry ID)
+    }
+    // TODO: Replace 'entry.YYYYYYYYY' with your actual Google Form entry ID for reCAPTCHA
+    if (recaptchaValue) {
+      formData.append('entry.YYYYYYYYY', recaptchaValue);   // reCAPTCHA Token (update this entry ID)
     }
 
     try {
@@ -207,7 +217,7 @@ export default function BookingForm({ onSubmit, onClose }: BookingFormProps) {
               >
                 <PhoneInput
                   international
-                  defaultCountry="IN"
+                  defaultCountry="AE"
                   value={phone}
                   onChange={(value) => {
                     setPhone(value || '');
@@ -217,6 +227,18 @@ export default function BookingForm({ onSubmit, onClose }: BookingFormProps) {
               </div>
               {errors.phone && (
                 <p className="mt-1 text-sm text-red-400">{errors.phone}</p>
+              )}
+            </div>
+
+            {/* reCAPTCHA */}
+            <div>
+              <ReCAPTCHA
+                sitekey="6LfrPY0sAAAAAP19eGSPfS_ROHfkSv8qLLoF1uk2"
+                onChange={setRecaptchaValue}
+                theme="dark"
+              />
+              {errors.recaptcha && (
+                <p className="mt-2 text-sm text-red-400">{errors.recaptcha}</p>
               )}
             </div>
 
