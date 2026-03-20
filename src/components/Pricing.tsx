@@ -92,7 +92,7 @@ export default function Pricing() {
               ) : (
                 <div className="flex items-baseline gap-1">
                   <span className="text-4xl sm:text-5xl font-bold text-white">${plan.price.monthly}</span>
-                  <span className="text-gray-400 text-sm sm:text-base">monthly per camera</span>
+                  <span className="text-gray-400 text-sm sm:text-base">monthly / camera</span>
                 </div>
               )}
             </div>

@@ -43,7 +43,7 @@ export default function BookingForm({ onSubmit, onClose }: BookingFormProps) {
   const [companyName, setCompanyName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState<string>('');
-  const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -67,8 +67,8 @@ export default function BookingForm({ onSubmit, onClose }: BookingFormProps) {
       newErrors.phone = 'Please enter a valid phone number';
     }
 
-    if (!recaptchaValue) {
-      newErrors.recaptcha = 'Please complete the reCAPTCHA verification';
+    if (!captchaToken) {
+      newErrors.captcha = 'Please complete the CAPTCHA';
     }
 
     setErrors(newErrors);
@@ -104,14 +104,9 @@ export default function BookingForm({ onSubmit, onClose }: BookingFormProps) {
     if (countryCode) {
       formData.append('entry.XXXXXXXXX', countryCode);      // Country Code (update this entry ID)
     }
-    // TODO: Replace 'entry.YYYYYYYYY' with your actual Google Form entry ID for reCAPTCHA
-    if (recaptchaValue) {
-      formData.append('entry.YYYYYYYYY', recaptchaValue);   // reCAPTCHA Token (update this entry ID)
-    }
-
     try {
       await fetch(
-        'https://docs.google.com/forms/d/e/1FAIpQLSfK4fESMYFw8SuO8DhRSe5MlFMM3zBoEl-KgAfPb_oj-FFyuA/formResponse',
+          'https://docs.google.com/forms/d/e/1FAIpQLSfK4fESMYFw8SuO8DhRSe5MlFMM3zBoEl-KgAfPb_oj-FFyuA/formResponse',
         {
           method: 'POST',
           mode: 'no-cors',
@@ -230,15 +225,17 @@ export default function BookingForm({ onSubmit, onClose }: BookingFormProps) {
               )}
             </div>
 
-            {/* reCAPTCHA */}
+            {/* CAPTCHA */}
             <div>
               <ReCAPTCHA
                 sitekey="6LfrPY0sAAAAAP19eGSPfS_ROHfkSv8qLLoF1uk2"
-                onChange={setRecaptchaValue}
-                theme="dark"
+                onChange={(token) => {
+                  setCaptchaToken(token);
+                  if (errors.captcha) setErrors({ ...errors, captcha: '' });
+                }}
               />
-              {errors.recaptcha && (
-                <p className="mt-2 text-sm text-red-400">{errors.recaptcha}</p>
+              {errors.captcha && (
+                <p className="mt-1 text-sm text-red-400">{errors.captcha}</p>
               )}
             </div>
 
