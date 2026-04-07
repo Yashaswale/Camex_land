@@ -61,7 +61,7 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
             {/* Brand */}
             <div className="text-sm text-gray-500">
-              © 2025 Camex
+              © 2026 Camex
             </div>
 
             {/* Navigation */}

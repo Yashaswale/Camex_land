@@ -1,8 +1,6 @@
-import { useState } from 'react';
 import { Check, X } from 'lucide-react';
 import { ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useModal } from '../contexts/ModalContext';
 
 const plans = [
   {
@@ -74,8 +72,6 @@ const comparisonFeatures = [
 ];
 
 export default function PricingTab() {
-  const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('monthly');
-  const { openModal } = useModal();
 
   const renderFeatureCell = (value: any) => {
     if (typeof value === 'boolean') {
@@ -118,29 +114,6 @@ export default function PricingTab() {
           <p className="text-gray-400 text-base sm:text-lg">Choose a plan that fits your CCTV scale and analytics needs.</p>
         </div>
 
-        <div className="flex items-center gap-3 mb-8 sm:mb-12">
-          <button
-            onClick={() => setBillingCycle('monthly')}
-            className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg font-medium transition-all text-sm sm:text-base ${
-              billingCycle === 'monthly'
-                ? 'bg-blue-500 text-white'
-                : 'bg-transparent border border-gray-700 text-gray-400'
-            }`}
-          >
-            Monthly
-          </button>
-          <button
-            onClick={() => setBillingCycle('yearly')}
-            className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg font-medium transition-all text-sm sm:text-base ${
-              billingCycle === 'yearly'
-                ? 'bg-blue-500 text-white'
-                : 'bg-transparent border border-gray-700 text-gray-400'
-            }`}
-          >
-            Yearly
-          </button>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {plans.map((plan) => (
             <div
@@ -162,30 +135,7 @@ export default function PricingTab() {
                 <p className="text-gray-400 text-xs sm:text-sm">{plan.description}</p>
               </div>
 
-              <div className="mb-4 sm:mb-6">
-                <div className="relative">
-                  <span className="absolute -top-2 right-0 text-3xl sm:text-4xl text-gray-400">*</span>
-                  <div className="flex flex-col gap-1">
-                    {billingCycle === 'yearly' ? (
-                      <>
-                        <div className="flex items-baseline gap-2">
-                          <span className="text-2xl sm:text-3xl font-bold text-gray-500 line-through">${plan.price.yearly}</span>
-                          <span className="text-4xl sm:text-5xl font-bold text-white">${Math.round(plan.price.yearly * 0.9)}</span>
-                          <span className="text-gray-400 text-sm sm:text-base">yearly/camera</span>
-                        </div>
-                        <span className="text-green-400 text-xs sm:text-sm font-medium">Save 10%</span>
-                      </>
-                    ) : (
-                      <div className="flex items-baseline gap-1">
-                        <span className="text-4xl sm:text-5xl font-bold text-white">${plan.price.monthly}</span>
-                        <span className="text-gray-400 text-sm sm:text-base">monthly/camera</span>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-4">
+              <div className="space-y-4 mb-6">
                 {plan.features.map((feature) => (
                   <div key={feature} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
@@ -193,6 +143,15 @@ export default function PricingTab() {
                   </div>
                 ))}
               </div>
+
+              <a
+                href="https://calendly.com/dezzex2/camex"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-all text-sm sm:text-base text-center block mt-auto"
+              >
+                Inquire Now
+              </a>
             </div>
           ))}
         </div>
@@ -203,41 +162,14 @@ export default function PricingTab() {
               <h3 className="text-base sm:text-lg font-bold mb-2">Compare Plans</h3>
               <p className="text-xs sm:text-sm">Choose your workspace plan according to your organisational plan</p>
             </div>
-            <div className="text-left sm:text-right relative">
-              <span className="absolute -top-2 right-0 text-base sm:text-lg text-white">*</span>
-              {billingCycle === 'yearly' ? (
-                <>
-                  <p className="font-bold text-sm sm:text-base line-through opacity-75">${plans[0].price.yearly}</p>
-                  <p className="font-bold text-sm sm:text-base">${Math.round(plans[0].price.yearly * 0.9)} yearly/camera</p>
-                </>
-              ) : (
-                <p className="font-bold text-sm sm:text-base">${plans[0].price.monthly} monthly/camera</p>
-              )}
-              <p className="text-xs sm:text-sm">Basic</p>
+            <div className="text-center">
+              <h4 className="text-lg sm:text-xl font-bold">Basic</h4>
             </div>
-            <div className="text-left sm:text-right relative">
-              <span className="absolute -top-2 right-0 text-base sm:text-lg text-white">*</span>
-              {billingCycle === 'yearly' ? (
-                <>
-                  <p className="font-bold text-sm sm:text-base line-through opacity-75">${plans[1].price.yearly}</p>
-                  <p className="font-bold text-sm sm:text-base">${Math.round(plans[1].price.yearly * 0.9)} yearly/camera</p>
-                </>
-              ) : (
-                <p className="font-bold text-sm sm:text-base">${plans[1].price.monthly} monthly/camera</p>
-              )}
-              <p className="text-xs sm:text-sm">Standard</p>
+            <div className="text-center">
+              <h4 className="text-lg sm:text-xl font-bold">Standard</h4>
             </div>
-            <div className="text-left sm:text-right relative">
-              <span className="absolute -top-2 right-0 text-base sm:text-lg text-white">*</span>
-              {billingCycle === 'yearly' ? (
-                <>
-                  <p className="font-bold text-sm sm:text-base line-through opacity-75">${plans[2].price.yearly}</p>
-                  <p className="font-bold text-sm sm:text-base">${Math.round(plans[2].price.yearly * 0.9)} yearly/camera</p>
-                </>
-              ) : (
-                <p className="font-bold text-sm sm:text-base">${plans[2].price.monthly} monthly/camera</p>
-              )}
-              <p className="text-xs sm:text-sm">Premium</p>
+            <div className="text-center">
+              <h4 className="text-lg sm:text-xl font-bold">Premium</h4>
             </div>
           </div>
 
@@ -265,29 +197,31 @@ export default function PricingTab() {
 
           <div className="bg-[#0F1F3A] border-t border-gray-700 p-4 sm:p-6 grid grid-cols-1 sm:grid-cols-4 gap-4">
             <div className="hidden sm:block"></div>
-            <button
-              onClick={openModal}
-              className="py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-all text-sm sm:text-base"
+            <a
+              href="https://calendly.com/dezzex2/camex"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-all text-sm sm:text-base text-center"
             >
-              Get Access
-            </button>
-            <button
-              onClick={openModal}
-              className="py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-all text-sm sm:text-base"
+              Inquire Now
+            </a>
+            <a
+              href="https://calendly.com/dezzex2/camex"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-all text-sm sm:text-base text-center"
             >
-              Get Access
-            </button>
-            <button
-              onClick={openModal}
-              className="py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-all text-sm sm:text-base"
+              Inquire Now
+            </a>
+            <a
+              href="https://calendly.com/dezzex2/camex"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-all text-sm sm:text-base text-center"
             >
-              Get Access
-            </button>
+              Inquire Now
+            </a>
           </div>
-        </div>
-
-        <div className="mt-8 text-center">
-          <p className="text-gray-400 text-xs sm:text-sm italic">* Prices may vary based on the region</p>
         </div>
       </div>
     </section>

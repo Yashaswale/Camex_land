@@ -1,6 +1,4 @@
-import { useState } from 'react';
 import { Check } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 const plans = [
   {
@@ -46,7 +44,6 @@ const plans = [
 ];
 
 export default function Pricing() {
-  const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('monthly');
 
   const toggleButtonClass = (active: boolean) =>
     `px-6 py-2.5 rounded-lg font-medium transition-all ${
@@ -76,29 +73,6 @@ export default function Pricing() {
           <p className="text-gray-400 text-xs sm:text-sm">{plan.description}</p>
         </div>
 
-        <div className="mb-4 sm:mb-6">
-          <div className="relative">
-            <span className="absolute -top-2 right-0 text-3xl sm:text-4xl text-gray-400">*</span>
-            <div className="flex flex-col gap-1">
-              {billingCycle === 'yearly' ? (
-                <>
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-2xl sm:text-3xl font-bold text-gray-500 line-through">${plan.price.yearly}</span>
-                    <span className="text-4xl sm:text-5xl font-bold text-white">${Math.round(plan.price.yearly * 0.9)}</span>
-                    <span className="text-gray-400 text-sm sm:text-base">yearly/camera</span>
-                  </div>
-                  <span className="text-green-400 text-xs sm:text-sm font-medium">Save 10%</span>
-                </> 
-              ) : (
-                <div className="flex items-baseline gap-1">
-                  <span className="text-4xl sm:text-5xl font-bold text-white">${plan.price.monthly}</span>
-                  <span className="text-gray-400 text-sm sm:text-base">monthly / camera</span>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-
         <div className="space-y-4 mb-6">
           {plan.features.map((feature) => (
             <div key={feature} className="flex items-start gap-3">
@@ -108,9 +82,9 @@ export default function Pricing() {
           ))}
         </div>
 
-        <Link to="/pricing" className={ctaButtonClass + ' block text-center text-sm sm:text-base mt-auto'}>
-          View Detail
-        </Link>
+        <a href="https://calendly.com/dezzex2/camex" target="_blank" rel="noopener noreferrer" className={ctaButtonClass + ' block text-center text-sm sm:text-base mt-auto'}>
+          Inquire Now
+        </a>
       </div>
     );
   }
@@ -138,27 +112,10 @@ export default function Pricing() {
           <p className="text-gray-400 text-base sm:text-lg">Choose a plan that fits your CCTV scale and analytics needs.</p>
         </div>
 
-        <div className="flex items-center gap-3 mb-8 sm:mb-12">
-          <button onClick={() => setBillingCycle('monthly')} className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg font-medium transition-all text-sm sm:text-base ${
-            billingCycle === 'monthly' ? 'bg-blue-500 text-white' : 'bg-transparent border border-gray-700 text-gray-400'
-          }`}>
-            Monthly
-          </button>
-          <button onClick={() => setBillingCycle('yearly')} className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg font-medium transition-all text-sm sm:text-base ${
-            billingCycle === 'yearly' ? 'bg-blue-500 text-white' : 'bg-transparent border border-gray-700 text-gray-400'
-          }`}>
-            Yearly
-          </button>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {plans.map((plan) => (
             <PlanCard key={plan.name} plan={plan} />
           ))}
-        </div>
-
-        <div className="mt-8 text-center">
-          <p className="text-gray-400 text-xs sm:text-sm italic">* Prices may vary based on the region</p>
         </div>
       </div>
     </section>
