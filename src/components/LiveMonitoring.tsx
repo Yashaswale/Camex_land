@@ -14,6 +14,13 @@ const cameras = [
   { id: 11, type: 'Crowd Monitoring', title: 'Road', status: 'Live', video: '/Videos/vid11.mp4' },
   { id: 12, type: 'Employee Monitoring', title: 'Factory', status: 'Live', video: '/Videos/vid12.mp4' },
   { id: 13, type: 'PPE Detection', title: 'Restaurant', status: 'Live', video: '/Videos/vid13.mp4' },
+  { id: 14, type: 'Monitoring', title: 'Factory', status: 'Live', video: '/Videos/vid14.mp4' },
+  { id: 15, type: 'Monitoring', title: 'Factory', status: 'Live', video: '/Videos/vid15.mp4' },
+  { id: 16, type: 'Monitoring', title: 'Factory', status: 'Live', video: '/Videos/vid16.mp4' },
+  { id: 17, type: 'Monitoring', title: 'School', status: 'Live', video: '/Videos/vid17.mp4' },
+  { id: 18, type: 'Monitoring', title: 'School', status: 'Live', video: '/Videos/vid18.mp4' },
+  { id: 19, type: 'Monitoring', title: 'School', status: 'Live', video: '/Videos/vid19.mp4' },
+  { id: 20, type: 'Monitoring', title: 'Retail Store', status: 'Live', video: '/Videos/vid20.mp4' },
 ];
 
 const categories = [
@@ -23,6 +30,7 @@ const categories = [
   { id: 'road', label: 'Road', title: 'Road' },
   { id: 'restaurant', label: 'Restaurant', title: 'Restaurant' },
   { id: 'hospital', label: 'Hospital', title: 'Hospital' },
+  { id: 'school', label: 'School', title: 'School' },
 ];
 
 // Map category IDs to title values in cameras
@@ -33,6 +41,7 @@ const categoryTitleMap: { [key: string]: string } = {
   'road': 'Road',
   'restaurant': 'Restaurant',
   'hospital': 'Hospital',
+  'school': 'School',
 };
 
 // Video Card Component with Lazy Loading
