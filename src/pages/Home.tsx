@@ -8,7 +8,7 @@ import CloudPartners from '../components/CloudPartners';
 import OurPartners from '../components/OurPartners';
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0A1628]">
+    <div className="min-h-screen bg-[#0A1628] overflow-x-hidden w-full">
       <Navigation />
       <Hero />
       <LiveMonitoring />
